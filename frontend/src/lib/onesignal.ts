@@ -12,33 +12,6 @@ export const initOneSignal = async () => {
     await OneSignal.init({
       appId,
       allowLocalhostAsSecureOrigin: process.env.NODE_ENV === 'development',
-      notifyButton: {
-        enable: false, // Custom UI kullanacağız
-      },
-      promptOptions: {
-        slidedown: {
-          enabled: true,
-          actionMessage: 'Hisse senedi sinyalleri ve önemli bildirimler almak ister misiniz?',
-          acceptButton: 'İzin Ver',
-          cancelButton: 'Şimdi Değil',
-          categories: {
-            tags: [
-              {
-                tag: 'trading_signals',
-                label: 'Alım-Satım Sinyalleri',
-              },
-              {
-                tag: 'price_alerts',
-                label: 'Fiyat Uyarıları',
-              },
-              {
-                tag: 'news',
-                label: 'Haberler ve Duyurular',
-              },
-            ],
-          },
-        },
-      },
     });
 
     console.log('OneSignal initialized successfully');
