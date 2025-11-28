@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { BarChart3, Search, TrendingUp, Settings, LogOut } from 'lucide-react'
+import { BarChart3, Search, TrendingUp, Settings, LogOut, Star, Briefcase } from 'lucide-react'
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
@@ -39,6 +39,22 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           >
             <BarChart3 size={20} />
             <span>Dashboard</span>
+          </Link>
+
+          <Link
+            href="/dashboard/watchlist"
+            className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition"
+          >
+            <Star size={20} />
+            <span>Watchlist</span>
+          </Link>
+
+          <Link
+            href="/dashboard/portfolio"
+            className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition"
+          >
+            <Briefcase size={20} />
+            <span>Portfolio</span>
           </Link>
 
           <Link
